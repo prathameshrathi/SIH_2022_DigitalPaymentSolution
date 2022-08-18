@@ -1,38 +1,447 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+* {
+  
+  font-family: "Poppins", sans-serif;
+}
+
+.links{
+  text-decoration: none;
+    
+    font-size: 20px;
+    font-weight: 800;
+    display: flex;
+justify-content: center;
+  position: relative;
+  top:-230px;
+    
+    
+    transition: color 700ms ease-in-out;
+    
+}
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  display: grid;
+ 
+  background: #f5f5f5;
+}
+.loop{
+  color:black;
+  
+  text-align: center;
+}
+.home{
+  width: 100%;
+  height:710px;
+  background: no-repeat center/cover;
+  ;
+  
+  
+  
+}
+#medchain{
+  font-weight: bolder;
+  font-size: 125px;
+}
+
+
+.hero { 
+  height:710px;
+  width: 100%;
+  display: table;
+  position: relative;
+}
+
+.overlay:before {
+content: '';
+background-color: rgba(255,255,255,0.3);
+height: 100%;
+width: 100%;
+position: absolute;
+
+
+}
+
+.hero-content {
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 75px;
+}
+
+.hero-text {
+  max-width: 890px;
+  width: 100%;
+  margin: 0 auto;
+  
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-text h1 {
+  position: relative;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hero-text p {
+  position: relative;
+  margin: 45px 0 30px;
+  font-size: 20px;
+  color: #26272d;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero-text .btn {
+  position: relative;
+  background-color: transparent;
+}
+
+.hero-text .btn:hover {
+  background-color: #26272d;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+/* Add history */
+.app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  padding: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 95%;
+  font-family: "Poppins", sans-serif;
+
+}
+
+th,
+td {
+   border: 1px solid black; 
+  text-align: left;
+  padding: 8px;
+  font-size: 40px;
+}
+
+th {
+  background-color: #41B3A3
+}
+
+td {
+  background-color: #FCFFFD;
+}
+
+form {
+  display: flex;
+  gap: 5px;
+}
+
+form td:last-child {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+form * {
+  font-size: 28px;
+}
+
+
+
+.add-patient{
+  background-color: thistle;
+}
+
+
+
+
+/*Login Page*/
+
+
+
+
+.container-services{
+  display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    width:100%;
+    
+}
+
+
+.container-1{
+  display: flexbox;
+}
+
+
+
+
+
+/*Section*/
+
+
+.subheading-text {
+   font-size: 20px;
+   
+   position: relative;
+   width:100%;
+   
+}
+
+.heading-separator {
+   position: relative;
+   margin: 0;
+   padding-bottom: 40px;
+   top:-200px;
+   left: 730px;
+   
+   
+}
+
+.heading-separator:after {
+   content: "";
+   position: absolute;
+   bottom: 25px;
+   left: 0;
+   right: 0;
+   height: 2px;
+   width: 50px;
+   margin: 0 auto;
+   background-color: #267df4;
+}
+
+/* Section: Features */
+.section-features h2 {
+   padding-bottom: 40px;
+   font-size: 30px;
+}
+
+.section-features img {
+   position: absolute;
+   right: 15px;
+   height: 380px;
+}
+
+/* Section: Services */
+.section-services .subheading-text {
+   margin-bottom: 90px;
+}
+
+
+
+.service {
+   /*min-height: 250px;*/
+   position:relative;
+   top:200px;
+   right:40px;
+   margin: 0px 50px 0px;
+   
+}
+
+.service-title {
+   margin: 35px 0 25px;
+   font-size: 13px;
+   text-transform: uppercase;
+}
+
+.service-info {
+   font-size: 13px; 
+}
+
+
+
+
+
+
+.site-footer{
+  position: relative;
+  top: 200px;
+  background-color: #05668D;
+  padding:80px 80px 80px ;
+  color: #e9edec;
+}
+a.twitter-bg {
+  /* color: #55acee;
+  border-color: #55acee;  */
   color: white;
+border-color:white;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+
+a.facebook-bg {
+/* color: #3b5998;
+border-color: #3b5998; */
+color: white;
+border-color:white;
+padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+a.pinterest {
+/* color: #25D366;
+border-color: #25D366; */
+color: white;
+border-color:white;
+padding: 10px;
+} 
+
+
+
+a.linkedin-bg {
+/* color: #007bb5;
+border-color: #007bb5; */
+color: white;
+border-color:white;
+padding: 10px;
 }
+
+#follow{
+  padding-bottom: 30px;
+}
+#copyright{
+  padding-left: 600px;
+}
+
+
+.Register{
+  
+  background-image: linear-gradient(white,#eeeee4);
+  
+width: 400px;
+height: 500px;
+position: absolute;
+
+
+display: table;
+  
+}
+.Register-footer{
+  position: relative;
+  top:1500px;
+}
+.Register-outer{
+  height: 730px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+width: 100%;
+position: relative;
+
+  background-image: linear-gradient(#77cfe2, #e9edec);;
+}
+.textfield{
+  padding-left: 90px;
+  
+}
+#login-text{
+  padding-left: 150px;;
+  padding-top: 30px;;
+}
+
+#submit-btn{
+
+  position: relative;
+  top:150px;
+}
+
+
+
+/*---------------------------------------------*/
+.addpatient{
+  /* width:80%;
+  height:50px; */
+  
+  display: inline-block;
+  margin-left: calc(100% - 65%);
+  padding-top: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+#addpatientheading{
+  align-items: center;
+  margin-left: calc(100% - 60%);
+  padding-top: 50px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.bloodgrpradio{
+  margin-left: 40px;
+}
+.create{
+  background-image: linear-gradient(#77cfe2, #e9edec);;
+  height:800px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#addpatientbutton{
+  margin-left: calc(100% - 60%);
+  width: 33%;
+  margin-top: 25px;;
+  height:43px;
+  border-radius: 15px;
+  background-color:  #05668D;
+  color:white;
+}
+
+
+.textarea-name{
+  width:100%;
+  border-radius: 5px;
+  
+}
+
+.pluspatient{
+float: right;
+padding-right: 150px;;
+padding-bottom: 50px;
+color:#05668D;
+font-size: 25px;
+font-weight: bold;
+}
+
+
+
+
+
+.newhistory{
+  display: inline-block;
+  margin-left: calc(100% - 70%);
+ 
+  margin-top: 50px;
+}
+
+#newhistorydesc{
+  width: 400px;;
+  height: 100px;
+  margin-left: 75px;
+}
+#newhistoryname{
+  width: 400px;;
+  height: 50px;
+  margin: 50px;
+}
+#newhistorysubmit{
+  
+  height: 50px;
+  margin-left: 240px;
+  margin-top: 20px;
+}
+#newhist{
+  background-image: linear-gradient(#77cfe2, #e9edec);;
+  
+}
+
+
+#aboutuspage{
+  background-image: linear-gradient(#77cfe2, #e9edec);;
+}
+

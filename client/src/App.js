@@ -1,25 +1,55 @@
-import logo from './logo.svg';
+//import ReactDOM from 'react-dom';
+//import Login from './Login';
+import Navbar from './components/navbar';
+import { BrowserRouter as Router, Route, Switch,Link } from 'react-router-dom';
+//import { AccordionButton } from 'react-bootstrap';
+import About from './About'
+import Home from './Home'
 import './App.css';
+import Register from './Register';
+import React, { Component } from 'react'
+import Button from './Button';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+  
+  render() {
+    return (
+      <div>
+        <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/Register">
+            
+            <Register />
+          </Route>
+
+
+
+          <Navbar/>
+            
+
+
+          <Navbar/>
+           
+            
+          
+          <Route exact path="/About">
+            <About />
+          </Route>
+
+        </Switch>
+        
+      </Router>
+      </div>
+    )
+  }
 }
 
-export default App;
+
+
+
+
+
