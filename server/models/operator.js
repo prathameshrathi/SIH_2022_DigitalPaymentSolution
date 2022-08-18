@@ -54,7 +54,7 @@ operatorSchema.methods.generateAuthToken  = async function(){
         this.tokens = this.tokens.concat({token:token});
         await this.save();
         console.log(token);
-        console.log("hi");
+        // console.log("hi");
         return token;
     }
     catch(err){
