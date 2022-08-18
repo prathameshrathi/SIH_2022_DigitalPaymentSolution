@@ -8,12 +8,12 @@ export const links = [
   },
   {
     id: 2,
-    url: '/component/PatientList',
-    text: 'dashboard',
+    url: '/Profile',
+    text: 'profile',
   },
   {
     id: 3,
-    url: '/about',
+    url: '/About',
     text: 'About',
   },
   {

@@ -16,8 +16,8 @@ return (
 		<NavLink to='/' activeStyle>
 			Home
 		</NavLink>
-		<NavLink to='/PatientList' activeStyle>
-			Services
+		<NavLink to='/Profile' activeStyle>
+			Profile
 		</NavLink>
 		<NavLink to='/Register' activeStyle>
 			Login

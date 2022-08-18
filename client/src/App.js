@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch,Link } from 'react-router-dom';
 //import { AccordionButton } from 'react-bootstrap';
 import About from './About'
 import Home from './Home'
+import Profile from './Profile';
 import './App.css';
 import Register from './Register';
 import React, { Component } from 'react'
@@ -25,18 +26,24 @@ export default class App extends Component {
             
             <Register />
           </Route>
-
-
-
+          
+          <Route exact path="/Profile">
           <Navbar/>
+            <Profile />
+          </Route>
+
+
+
+          
             
 
 
-          <Navbar/>
+          
            
             
           
           <Route exact path="/About">
+          
             <About />
           </Route>
 

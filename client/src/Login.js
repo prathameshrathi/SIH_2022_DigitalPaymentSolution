@@ -2,11 +2,13 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Navbar from './components/navbar';
+import Footer from './footer';
 import './App.css';
 
 function App() {
 
     return(
+      <>
        <div className="container">
         <div className="form-box">
           <div className="header-form">
@@ -41,7 +43,12 @@ function App() {
             </div>
           </div>
         </div>
+
+        <div>
+        <Footer />
+        </div>
        </div>   
+       </>
     );
   }
 

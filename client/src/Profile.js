@@ -1,9 +1,8 @@
 import Navbar from "./components/navbar";
-import Type from "./typewriter"
+
 import './App.css';
 import Features from "./Features";
 import Footer from "./footer"
-import Profile from "./Profile"
 import Anagram from "./anagram"
 import FeaturesH from "./Features-h";
 import React from 'react';
@@ -15,7 +14,7 @@ NavMenu,
 } from './components/NavbarElements';
 import typewriter from './typewriter'
 
-const Home = () => {
+const Profile = () => {
   return (
     <>
    
@@ -29,43 +28,20 @@ const Home = () => {
         
             <div class="hero-text">
           
-		
-<div className="links">
-		
-		<NavLink to='/' activeStyle>
-			Home
-		</NavLink>
-		<NavLink to='/Profile' activeStyle>
-			Profile
-		</NavLink>
-		<NavLink to='/Register' activeStyle>
-			Login
-		</NavLink>
-		<NavLink to='/About' activeStyle>
-			About Us
-		</NavLink>
-		
-		</div>
+
 		
 	
-                <h1 id="medchain">CodeAspirators</h1>
-                
-                <Type/>
+                <h1 id="medchain">Profile here</h1>
                 
             </div>
         </div>
     </div>
             
-        
-       
-      
-      
-      <FeaturesH/>
        <Footer/>
        </>
      
   );
 }
 
-export default Home;
+export default Profile;
 
