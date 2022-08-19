@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require("jsonwebtoken");
-const Operator = require('./../models/operator');
+const Operator = require("../models/operator");
+const authenticate = require("../middleware/authenticate");
 
 router.post('/signup',async (req,res)=>{
     const {name,email,mobile,upiId,uid,password,cpassword} = req.body;
@@ -49,6 +50,14 @@ router.post('/login',async (req,res)=>{
     }
 });
 
+router.get('/profile',authenticate,async (req,res)=>{
+    res.send(req.rootUser);
+});
+
+router.get('/logout',(req,res)=>{
+    res.clearCookie('OperatorCookie', {path:'/login'});
+    res.status(200).send("User Logout");
+});
 
 function validEmail(email){
     if(email===null) return false;
