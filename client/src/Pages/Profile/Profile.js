@@ -1,18 +1,18 @@
-import Navbar from "./components/navbar";
+import Navbar from '../../components/navbar';
 
-import './App.css';
-import Features from "./Features";
-import Footer from "./footer"
-import Anagram from "./anagram"
-import FeaturesH from "./Features-h";
+import '../../App'
+import Features from '../../Features';
+import Footer from "../../components/Footer/footer";
+import { isAnagram } from 'react-anagram-animation';
+import FeaturesH from '../../Features-h';
 import React from 'react';
 import {
 Nav,
 NavLink,
 Bars,
 NavMenu,
-} from './components/NavbarElements';
-import typewriter from './typewriter'
+} from '../../components/NavbarElements';
+import typewriter from '../../typewriter'
 
 const Profile = () => {
   return (

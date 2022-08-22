@@ -1,11 +1,12 @@
-import Navbar from "./components/navbar";
-import Footer from './footer'
+import Navbar from '../../components/navbar';
+import NavBar from '../../components/NavBar/navbar'
+import Footer from '../../components/Footer/footer';
 import "./About.css" 
-const App = () => {
+const About = () => {
     return (
       <>
      
-      <Navbar/>
+      <NavBar/>
         <div  id="aboutuspage">
         
         <div id="our-team">
@@ -22,4 +23,4 @@ const App = () => {
       );
     };
     
-    export default App;
+    export default About;

@@ -3,10 +3,14 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+// import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+// import {Input} from 'material-ui/Input';
 import axios from 'axios';
-import Login from './Login';
-import Navbar from './components/navbar';
-import Footer from './footer'
+import Login from '../Register/Login'
+import NavBar from '../../components/NavBar/navbar';
+import Footer from '../../components/Footer/footer';
+import Button from 'react-bootstrap/esm/Button';
+
 class Register extends Component {
   constructor(props){
     super(props);
@@ -17,6 +21,8 @@ class Register extends Component {
       password:''
     }
   }
+
+
   componentWillReceiveProps(nextProps){
     console.log("nextProps",nextProps);
   }
@@ -66,29 +72,46 @@ class Register extends Component {
    
     return (
       <div>
-        <MuiThemeProvider>
-        <Navbar/>
+        <NavBar/>
         <div className='Register-outer'>
           <div className='Register'>
           
           <h1 id='login-text'>Login</h1>
+          {/* <Input id="my-input" aria-describedby="my-helper-text" /> */}
+          <MuiThemeProvider>
+          
+
+
            <TextField className='textfield'
-             hintText="Enter your First "
-             floatingLabelText="First Name"
+             hintText="Enter your Name "
+             floatingLabelText="Name"
              onChange = {(event,newValue) => this.setState({first_name:newValue})}
              />
            <br/>
+           
            <TextField className='textfield'
-             hintText="Enter your Last "
-             floatingLabelText="Last Name"
+             hintText="Enter your Email "
+             floatingLabelText="Email"
              onChange = {(event,newValue) => this.setState({last_name:newValue})}
+             />
+           <br/>
+           <TextField className='textfield'
+             hintText="Enter your phone number "
+             floatingLabelText="Mobile No."
+             onChange = {(event,newValue) => this.setState({mob_no:newValue})}
+             />
+           <br/>
+           <TextField className='textfield'
+             hintText="Enter your UPI id "
+             floatingLabelText="UPI Id"
+             onChange = {(event,newValue) => this.setState({upi:newValue})}
              />
            <br/>
            <TextField className='textfield'
              hintText="Aadhar Number" 
              floatingLabelText={userLabel}
              
-             onChange = {(event,newValue) => this.setState({email:newValue})}
+             onChange = {(event,newValue) => this.setState({aadhar:newValue})}
              />
            <br/> 
            <TextField className='textfield'
@@ -98,17 +121,19 @@ class Register extends Component {
              onChange = {(event,newValue) => this.setState({password:newValue})}
              />
            <br/>
-           
-          </div>
-          <RaisedButton id="submit-btn" label="Submit" primary={true}  onClick={(event) => this.handleClick(event,this.props.role)}/>
-          
-         
-          </div>
-          
-         </MuiThemeProvider>
-      </div>
 
-      
+           
+           
+          <Button id="submit-btn" label="Submit">Submit</Button>
+          
+          {/* <RaisedButton id="submit-btn" label="Submit" primary={true}  onClick={(event) => this.handleClick(event,this.props.role)}/> */}
+          
+          </MuiThemeProvider>
+          
+          </div>
+          </div>
+       
+      </div>
     
       
     );

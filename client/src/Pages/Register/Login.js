@@ -1,9 +1,9 @@
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Navbar from './components/navbar';
-import Footer from './footer';
-import './App.css';
+import Navbar from '../../components/navbar';
+import Footer from '../../components/Footer/footer';
+import '../../App.css'
 
 function App() {
 
