@@ -56,6 +56,7 @@ router.get('/profile',authenticate,async (req,res)=>{
     res.send(req.rootUser);
 });
 
+
 router.get('/logout',authenticate,async (req,res)=>{
     try{
     res.clearCookie('OperatorCookie', {path:'/'});

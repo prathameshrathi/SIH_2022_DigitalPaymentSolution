@@ -56,15 +56,22 @@ export default class App extends Component {
             <Checkout />
           </Route>
 
+<<<<<<< HEAD
+          <Route exact path="/Register">
+            <Register />
+=======
           <Route exact path="/login">
             
             <LoginCheckout />
+>>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7
           </Route>
           
           <Route exact path="/Profile">
           <NavBar/>
             <Profile />
           </Route>
+<<<<<<< HEAD
+=======
 
           <Route exact path="/services">
           
@@ -85,6 +92,7 @@ export default class App extends Component {
            
             
           
+>>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7
           <Route exact path="/About">
           
             <About />
