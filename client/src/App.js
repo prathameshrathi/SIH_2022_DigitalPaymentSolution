@@ -1,15 +1,26 @@
 //import ReactDOM from 'react-dom';
 //import Login from './Login';
-import Navbar from './components/navbar';
+// import Navbar from './components/navbar';
+import NavBar from '../src/components/NavBar/navbar'
 import { BrowserRouter as Router, Route, Switch,Link } from 'react-router-dom';
 //import { AccordionButton } from 'react-bootstrap';
-import About from './About'
-import Home from './Home'
-import Profile from './Profile';
+import About from './Pages/About/About';
+import Home from './Pages/Home/Home';
+import Header from './Pages/Header/header';
+import Profile from './Pages/Profile/Profile';
+import Services from './Pages/Services/services';
 import './App.css';
-import Register from './Register';
+//import Register from './Pages/Register/Register';
+import Payment from './Pages/Payment/payment';
+import LoginPage from './Pages/Checkout/PersonalInfo';
+import Checkout from './Pages/Checkout/Checkout'
 import React, { Component } from 'react'
 import Button from './Button';
+//import Login from './Pages/Register/Login'
+import LoginCheckout from './Pages/Checkout/login_checkout';
+// import HeaderOne from './demo';
+
+
 
 
 export default class App extends Component {
@@ -20,17 +31,68 @@ export default class App extends Component {
         <Router>
         <Switch>
           <Route exact path="/">
-            <Home />
+          {/* <Helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Khula:wght@400;600;800&display=swap" rel="stylesheet" />
+      </Helmet> */}
+            <Header />
+          </Route>
+          {/* <Route exact path="/demo">
+            <HeaderOne />
+          </Route> */}
+          <Route exact path="/register">
+            
+            <LoginCheckout />
+          </Route>
+          <Route exact path="/about">
+            
+            <About />
+          </Route>
+         
+          
+          <Route exact path="/checkout">
+            
+            <Checkout />
           </Route>
 
+<<<<<<< HEAD
           <Route exact path="/Register">
             <Register />
+=======
+          <Route exact path="/login">
+            
+            <LoginCheckout />
+>>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7
           </Route>
           
           <Route exact path="/Profile">
-          <Navbar/>
+          <NavBar/>
             <Profile />
           </Route>
+<<<<<<< HEAD
+=======
+
+          <Route exact path="/services">
+          
+            <Services />
+          </Route>
+          <Route exact path="/payment">
+          
+            < Payment/>
+          </Route>
+
+
+
+          
+            
+
+
+          
+           
+            
+          
+>>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7
           <Route exact path="/About">
           
             <About />

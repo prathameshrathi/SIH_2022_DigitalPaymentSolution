@@ -6,13 +6,13 @@ const Operator = require("../models/operator");
 const authenticate = require("../middleware/authenticate");
 
 router.post('/signup',async (req,res)=>{
-    const {name,email,mobile,upiId,uid,password,cpassword} = req.body;
-    if(!validEmail(email) || !validMob(mobile) || !validUpi(upiId) ||!validUid(uid)){
-        return res.status(422).json({message:"Details invalid!!"})
-    }; 
+    const {fname,email,mobile,upiId,uid,password,lname,city,address,pincode} = req.body;
+    // if(!validEmail(email) || !validMob(mobile) || !validUpi(upiId) ||!validUid(uid)){
+    //     return res.status(422).json({message:"Details invalid!!"})
+    // }; 
     // console.log(name);
     try{
-    const exists = await Operator.findOne({email:email})
+    const exists = await Operator.findOne({email:email});
     if(exists) return res.status(422).json({message:"Operator already exists!"});
     const operator = new Operator(req.body);
     await operator.save(req.body);
@@ -31,16 +31,17 @@ router.post('/login',async (req,res)=>{
     if(!operatorFound) return res.json({message:"Not registered"});
     else{
         const isMatch = await bcrypt.compare(password,operatorFound.password);
-        const token = operatorFound.generateAuthToken();
+        const token = await operatorFound.generateAuthToken();
         res.cookie("OperatorCookie",token,{
             expires: new Date(Date.now()+3315360000000),
-            httpOnly: true
+            httpOnly: true,
         })
+        // console.log("Login toekn=>",token);
         if(!isMatch){
             res.status(422).json({message:"Incorrect password"});
         }
         else{
-            res.status(200).json({message:"Logged in successfully"});
+            res.status(200).json({message:"Logged in successfully",token});
         }
     }
     }
@@ -50,10 +51,20 @@ router.post('/login',async (req,res)=>{
     }
 });
 
+router.get('/profile',authenticate,async (req,res)=>{
+    // res.clearCookie('userdata', {path:'/login'});
+    res.send(req.rootUser);
+});
 
-router.get('/logout',(req,res)=>{
+
+router.get('/logout',authenticate,async (req,res)=>{
+    try{
     res.clearCookie('OperatorCookie', {path:'/login'});
-    res.status(200).send("User Logout");
+    res.status(200).json({message:"User Logout"});
+    }
+    catch(err){
+        res.send(err);
+    }
 });
 
 function validEmail(email){

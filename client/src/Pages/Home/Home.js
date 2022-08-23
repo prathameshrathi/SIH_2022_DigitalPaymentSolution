@@ -1,24 +1,25 @@
-import Navbar from "./components/navbar";
-import Type from "./typewriter"
-import './App.css';
-import Features from "./Features";
-import Footer from "./footer"
-import Profile from "./Profile"
-import Anagram from "./anagram"
-import FeaturesH from "./Features-h";
+import Navbar from "../../components/navbar";
+import NavBar from '../../components/NavBar/navbar'
+import Type from "../../typewriter"
+import '../../App'
+import Features from "../../Features";
+import Footer from "../../components/Footer/footer"
+import Profile from "../Profile/Profile";
+import Anagram from "../../components/anagram"
+import FeaturesH from "../../Features-h";
 import React from 'react';
 import {
 Nav,
 NavLink,
 Bars,
 NavMenu,
-} from './components/NavbarElements';
-import typewriter from './typewriter'
+} from '../../components/NavbarElements';
+import typewriter from '../../typewriter'
 
 const Home = () => {
   return (
     <>
-   
+   <NavBar/>
       
   
 
@@ -28,9 +29,11 @@ const Home = () => {
         <div class="hero-content">
         
             <div class="hero-text">
+
+
           
 		
-<div className="links">
+{/* <div className="links">
 		
 		<NavLink to='/' activeStyle>
 			Home
@@ -45,16 +48,16 @@ const Home = () => {
 			About Us
 		</NavLink>
 		
-		</div>
+		</div> */}
 		
 	
                 <h1 id="medchain">CodeAspirators</h1>
                 
                 <Type/>
                 
-            </div>
+             </div>
         </div>
-    </div>
+    </div> 
             
         
        
