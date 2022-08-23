@@ -79,8 +79,9 @@ class Register extends Component {
              />
            <br/>
            <TextField className='textfield'
-             hintText="Enter your Last "
-             floatingLabelText="Last Name"
+              label="Last Name"
+            //  hintText="Enter your Last "
+            //  floatingLabelText="Last Name"
              onChange = {(event,newValue) => this.setState({last_name:newValue})}
              />
            <br/>

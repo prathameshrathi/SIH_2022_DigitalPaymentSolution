@@ -5,7 +5,9 @@ const port = process.env.PORT;
 const app = express();
 app.use(express.json());
 const auth = require('./routes/auth');
+const otp = require('./routes/otp');
 app.use(auth);
+app.use(otp);
 app.use('/',(req,res)=>{
     res.send("Server created");
 })

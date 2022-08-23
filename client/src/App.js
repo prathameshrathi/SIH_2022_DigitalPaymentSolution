@@ -22,8 +22,8 @@ export default class App extends Component {
           <Route exact path="/">
             <Home />
           </Route>
+
           <Route exact path="/Register">
-            
             <Register />
           </Route>
           
@@ -31,17 +31,6 @@ export default class App extends Component {
           <Navbar/>
             <Profile />
           </Route>
-
-
-
-          
-            
-
-
-          
-           
-            
-          
           <Route exact path="/About">
           
             <About />

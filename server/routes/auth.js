@@ -50,9 +50,6 @@ router.post('/login',async (req,res)=>{
     }
 });
 
-router.get('/profile',authenticate,async (req,res)=>{
-    res.send(req.rootUser);
-});
 
 router.get('/logout',(req,res)=>{
     res.clearCookie('OperatorCookie', {path:'/login'});
