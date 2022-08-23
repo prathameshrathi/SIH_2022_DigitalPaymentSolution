@@ -58,7 +58,7 @@ router.get('/profile',authenticate,async (req,res)=>{
 
 router.get('/logout',authenticate,async (req,res)=>{
     try{
-    res.clearCookie('OperatorCookie', {path:'/login'});
+    res.clearCookie('OperatorCookie', {path:'/'});
     res.status(200).json({message:"User Logout"});
     }
     catch(err){

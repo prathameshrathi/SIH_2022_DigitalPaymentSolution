@@ -3,7 +3,7 @@ const router = express.Router();
 const QRCode = require('qrcode');
 const authenticate = require('../middleware/authenticate');
 
-router.post('/cash',(req,res)=>{
+router.post('/cash',authenticate,(req,res)=>{
 
 })
 
@@ -30,7 +30,7 @@ router.get('/scan', authenticate,function (req, res) {
 })
 
 
-router.post('aeps',(req,res)=>{
+router.post('aeps',authenticate,(req,res)=>{
 
 })
 
