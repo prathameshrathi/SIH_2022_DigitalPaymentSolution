@@ -3,7 +3,11 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const operatorSchema = new mongoose.Schema({
-    name:{
+    fname:{
+        type: String,
+        required:true,
+    },
+    lname:{
         type: String,
         required:true,
     },
@@ -30,12 +34,40 @@ const operatorSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    city:{
+        type: String,
+    },
+    address:{
+        type: String,
+    },
+    pincode:{
+        type: Number
+    },
     tokens:[
         {
             token:{
                 type: String,
                 required: true
             }
+        }
+    ],
+    transactions:[
+        {
+            user:{
+                type:String
+            },
+            uid:{
+                type:Number
+            },
+            date:{
+                type:Date
+            },
+            amount:{
+                type:Number
+            },
+            services:[
+
+            ]
         }
     ]
 }
@@ -56,6 +88,17 @@ operatorSchema.methods.generateAuthToken  = async function(){
         console.log(token);
         // console.log("hi");
         return token;
+    }
+    catch(err){
+        console.log(err);
+    }
+}
+
+operatorSchema.methods.generateTransaction = async function(data){
+    try{
+        this.transactions.push(data);
+        await this.save();
+        console.log(data);
     }
     catch(err){
         console.log(err);

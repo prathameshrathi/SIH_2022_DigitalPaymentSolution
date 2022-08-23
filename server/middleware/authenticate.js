@@ -2,7 +2,15 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/operator");
 const authenticate = async (req,res,next)=>{
     try{
-        const token = req.cookies.OperatorCookie;
+        // let authHeader = req.headers.authorization;
+        let token = req.cookies.OperatorCookie;
+        // if(authHeader){
+        //     token = authHeader.split(" ")[1];
+        // }
+        if(!token){
+            return res.status(401).json({message:"Unauthorized accessing"});
+        }
+        // console.log("Token->" + token);
         const verifyToken = jwt.verify(token,process.env.SECRET_KEY);
         const rootUser = await User.findOne({_id:verifyToken._id,"tokens.token":token});
 
@@ -14,7 +22,8 @@ const authenticate = async (req,res,next)=>{
         next();
     }
     catch(err){
-        res.status(401).send("Unauthorized access");
+        console.log(err);
+        res.status(401).json({message:"Unauthorized access"});
     }
 }
 
