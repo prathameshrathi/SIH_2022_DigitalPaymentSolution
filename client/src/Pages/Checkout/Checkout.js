@@ -15,8 +15,11 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import PersonalInfo from "./PersonalInfo";
 import CentreInfo from "./CentreInfo";
 import axios from "axios";
-import Review from "./AccountInfo";
 import NavBar from "../../components/NavBar/navbar";
+import AccountInfo from "./AccountInfo";
+import {useHistory} from 'react-router-dom';
+// import browserHistory from 'react-router';
+import {Redirect} from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -33,23 +36,12 @@ function Copyright() {
 
 const steps = ["Personal Details", "Centre Details", "Account Details"];
 
-// function getStepContent(step) {
 
-//   switch (step) {
-//     case 0:
-//       return <PersonalInfo />;
-//     case 1:
-//       return <CentreInfo />;
-//     case 2:
-//       return <Review />;
-//     default:
-//       throw new Error('Unknown step');
-//   }
-// }
 
 const theme = createTheme();
 
 export default function Checkout() {
+  // const navigate = useNavigate();
   const [activeStep, setActiveStep] = React.useState(0);
 
   const [name, setName] = React.useState("");
@@ -87,13 +79,19 @@ export default function Checkout() {
           />
         );
       case 2:
-        return <Review setAadhar={setAadhar} setUpi={setUpi}/>;
+        return (
+        <AccountInfo 
+            setAadhar={setAadhar} 
+            setUpi={setUpi}
+          />
+        );
       default:
         throw new Error("Unknown step");
     }
   }
-
+  const history=useHistory();
   const handleClick = (event, role) => {
+    
     console.log(name);
     var apiBaseUrl = "http://localhost:5000";
     // console.log("values in register handler",role);
@@ -110,7 +108,7 @@ export default function Checkout() {
         .post(apiBaseUrl + "/signup", payload)
         .then(function (response) {
           console.log(response);
-          if (response.data.code === 200) {
+          if (response.status === 200) {
             //  console.log("registration successfull");
 
             var loginmessage = "Not Registered yet.Go to registration";
@@ -120,7 +118,7 @@ export default function Checkout() {
               isLogin: true,
             });
           } else {
-            console.log("some error ocurred", response.data.code);
+            console.log("some error ocurred", response.status);
           }
         })
         .catch(function (error) {
@@ -129,6 +127,10 @@ export default function Checkout() {
     } else {
       alert("Input field value is missing");
     }
+    // navigate('/login')
+    // browserHistory.push('/login');
+    // return <Redirect to='/login'/>;
+    history.push('/login');
   };
 
   const handleNext = () => {
@@ -140,6 +142,7 @@ export default function Checkout() {
   };
 
   return (
+    
     <ThemeProvider theme={theme}>
       <CssBaseline />
       {/* <AppBar
@@ -175,11 +178,16 @@ export default function Checkout() {
           </Stepper>
           <React.Fragment>
             {activeStep === steps.length ? (
-              <React.Fragment>
-                {/* <Typography variant="h5" gutterBottom> */}
-                  <Button onClick={handleClick}>Submit</Button>
-                {/* </Typography> */}
-              </React.Fragment>
+              <Box sx={{ display: "flex" }}>
+                  <Button sx={{ mt: 3, ml: 1 }} 
+                    onClick={
+                      handleClick
+                    
+                    }>
+                      Submit
+                  </Button>
+                 
+              </Box>
             ) : (
               <React.Fragment>
                 {getStepContent(activeStep)}
@@ -196,7 +204,7 @@ export default function Checkout() {
                     onClick={handleNext}
                     sx={{ mt: 3, ml: 1 }}
                   >
-                    {activeStep === steps.length - 1 ? "Submit" : "Next"}
+                    {activeStep === steps.length - 1 ? "Next" : "Next"}
                   </Button>
                 </Box>
               </React.Fragment>

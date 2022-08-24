@@ -36,7 +36,7 @@ router.post('/login',async (req,res)=>{
             expires: new Date(Date.now()+3315360000000),
             httpOnly: true,
         })
-        // console.log("Login toekn=>",token);
+        console.log("Login toekn=>",token);
         if(!isMatch){
             res.status(422).json({message:"Incorrect password"});
         }
@@ -46,7 +46,7 @@ router.post('/login',async (req,res)=>{
     }
     }
     catch(err){
-        // console.log(err);
+        console.log(err);
         res.send(err);
     }
 });

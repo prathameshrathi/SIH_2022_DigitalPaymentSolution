@@ -10,7 +10,6 @@ import Header from './Pages/Header/header';
 import Profile from './Pages/Profile/Profile';
 import Services from './Pages/Services/services';
 import './App.css';
-//import Register from './Pages/Register/Register';
 import Payment from './Pages/Payment/payment';
 import LoginPage from './Pages/Checkout/PersonalInfo';
 import Checkout from './Pages/Checkout/Checkout'
@@ -41,6 +40,9 @@ export default class App extends Component {
           {/* <Route exact path="/demo">
             <HeaderOne />
           </Route> */}
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route exact path="/register">
             
             <LoginCheckout />
@@ -56,22 +58,15 @@ export default class App extends Component {
             <Checkout />
           </Route>
 
-<<<<<<< HEAD
-          <Route exact path="/Register">
-            <Register />
-=======
           <Route exact path="/login">
             
             <LoginCheckout />
->>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7
           </Route>
           
           <Route exact path="/Profile">
           <NavBar/>
             <Profile />
           </Route>
-<<<<<<< HEAD
-=======
 
           <Route exact path="/services">
           
@@ -83,16 +78,6 @@ export default class App extends Component {
           </Route>
 
 
-
-          
-            
-
-
-          
-           
-            
-          
->>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7
           <Route exact path="/About">
           
             <About />

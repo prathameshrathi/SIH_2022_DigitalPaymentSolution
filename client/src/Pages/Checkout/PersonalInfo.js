@@ -78,7 +78,7 @@ import { modalUnstyledClasses } from '@mui/material';
             onChange={(e)=>setPwd(e.target.value)}
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        {/* <Grid item xs={12} sm={6}>
           <TextField
             id="confirm_password"
             name="confirm_password"
@@ -87,7 +87,7 @@ import { modalUnstyledClasses } from '@mui/material';
             variant="standard"
             onChange={(e)=>setRepwd(e.target.value)}
           />
-        </Grid>
+        </Grid> */}
         {/* <Grid item xs={12} sm={6}>
           <TextField
             required
