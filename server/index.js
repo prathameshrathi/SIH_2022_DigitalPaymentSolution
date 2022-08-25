@@ -14,18 +14,18 @@ const corsOptions ={
 }
 app.use(cors(corsOptions));
 const auth = require('./routes/auth');
-
-// const otp = require('./routes/otp');
 app.use(auth);
 // app.use(otp);
 
 const user = require('./routes/user');
 const modes = require('./routes/modes');
 const transaction = require('./routes/transaction');
+const otp = require('./routes/otp');
 app.use(auth);
 app.use(user);
 app.use(modes);
 app.use(transaction);
+app.use(otp);
 app.use(express.json({extended:true}));
 
 app.use('/',(req,res)=>{

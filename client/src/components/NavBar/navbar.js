@@ -18,7 +18,7 @@ function Navbar() {
   return (
     <nav className="nav">
       <a href="#" className="nav__brand">
-        herdoy
+        CodeAspirators
       </a>
       <ul className={active}>
         <li className="nav__item">
@@ -37,7 +37,7 @@ function Navbar() {
           </a>
         </li>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <a href="/Profile" className="nav__link">
             Profile
           </a>
         </li>
@@ -48,7 +48,7 @@ function Navbar() {
         </li>
         
         <li className="nav__item">
-          <a href="/register" className="nav__link">
+          <a href="/checkout" className="nav__link">
             Sign Up
           </a>
         </li>

@@ -3,7 +3,7 @@ import "./payment.css";
 import NavBar from '../../components/NavBar/navbar';
 import Footer from "../../components/Footer/footer";
 const Payment = () => {
-  const [avatarImageURL, setAvatar] = useState();
+  //const [avatarImageURL, setAvatar] = useState();
   const [selected, setSelected] = useState("biff");
   let itemList = ["Gpay", "Paytm", "Paypal", "Visa", "MasterCard"];
 

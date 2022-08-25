@@ -1,11 +1,13 @@
 //import ReactDOM from 'react-dom';
 //import Login from './Login';
 // import Navbar from './components/navbar';
+//import Navbar from './components/navbar';
+
 import NavBar from '../src/components/NavBar/navbar'
 import { BrowserRouter as Router, Route, Switch,Link } from 'react-router-dom';
 //import { AccordionButton } from 'react-bootstrap';
 import About from './Pages/About/About';
-import Home from './Pages/Home/Home';
+//import Home from './Pages/Home/Home';
 import Header from './Pages/Header/header';
 import Profile from './Pages/Profile/Profile';
 import Services from './Pages/Services/services';
@@ -56,22 +58,23 @@ export default class App extends Component {
             <Checkout />
           </Route>
 
-<<<<<<< HEAD
-          <Route exact path="/Register">
+{/* <<<<<<< HEAD */}
+          {/* <Route exact path="/Register">
             <Register />
-=======
+            </Route>   */}
+{/* ======= */}
           <Route exact path="/login">
             
             <LoginCheckout />
->>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7
+{/* >>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7 */}
           </Route>
           
           <Route exact path="/Profile">
           <NavBar/>
             <Profile />
           </Route>
-<<<<<<< HEAD
-=======
+{/* <<<<<<< HEAD */}
+{/* ======= */}
 
           <Route exact path="/services">
           
@@ -92,7 +95,7 @@ export default class App extends Component {
            
             
           
->>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7
+{/* >>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7 */}
           <Route exact path="/About">
           
             <About />
