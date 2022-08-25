@@ -16,25 +16,7 @@ const Payment = () => {
   return (
     <div>
         <NavBar/>
-        
-    
-    <div className="payment-container">
-      <div className="button-container" onChange={onChangeValue}>
-        {itemList.map((item, i) => {
-          return (
-            <div className="itemname">
-              <input name="avatar" id={item} type="radio" value={item} />
-              <label className="button-label" htmlFor={item}>
-                <div className="button-component">{item}</div>
-              </label>
-            </div>
-          );
-        })}
-      </div>
-      <button onClick={handleSubmit}> Submit </button>
-    </div>
-    <Footer/>
-
+        <h2>No current transactions</h2>
     </div>
   );
 };

@@ -1,0 +1,113 @@
+.maincontainer{
+  width : 100%;
+  text-align : centre;
+  display: flex;
+}
+
+.right{
+  width: 50%;
+  padding: 3%;
+  
+}
+.title{
+  width: 100%;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.generateotp{
+  width: 25%;
+  margin : auto;
+
+}
+  
+.createotp{
+  background-color : rgba(255, 123, 35, 0.971);;
+  padding :10px 15px;
+  border-radius : 5px;
+  font-size: 15px;
+  
+  margin: auto;
+}
+.createotp:hover{
+  background-color: rgba(255, 123, 35, 0.971);
+  transform: scale(1.1);
+}
+
+.otp-container{
+  width: 50%;
+  margin: 8% auto;
+  text-align: center;
+}
+.otp-false{
+  display: none;
+}
+.otp-true{
+  display: block;
+}
+
+.otp-true input{
+  border: none;
+  border-bottom: 1px solid gray;
+  margin-top: 8%;
+  width: 100%;
+  font-size: medium;
+}
+
+.confirm{
+  margin: 8% auto;
+  background-color : rgba(44, 195, 20, 0.971);;
+  padding :10px 15px;
+  border-radius : 5px;
+  font-size: 15px;
+}
+
+.confirm:hover{
+  background-color : rgba(44, 195, 20, 0.971);
+  transform: scale(1.1);
+}
+
+.left{
+  width: 40%;
+  align-items: center;
+  margin-left: 10%;
+}
+.payoption{
+  width: 50%;
+  margin : 5%;
+  border: 3px solid black;
+  align-items: center;
+  font-size: large;
+  padding: 2% 5%;
+}
+.payoption input{
+  font-size: 20px;
+  color: black;
+}
+
+.paymethod{
+  display: flex;
+}
+
+.pay{
+  display: none;
+}
+
+.pay.show{
+  display: block;
+  
+}
+
+.pay img{
+  width:200px;
+  height:200px;
+  margin: 4% auto;
+}
+
+#missingotp{
+  text-align: center;
+  font-size: 15px;
+  color: red;
+  margin-top: 20px;
+}

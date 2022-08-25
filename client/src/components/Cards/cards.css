@@ -5,27 +5,38 @@
 .Main-container button {
     width: fit-content;
     align-self: center;
-    margin: 0 48%;
+    margin: 0px 48%;
     font-size: 15px;
     padding: 2px 10px;
     border-radius: 8px;
     background-color: rgb(49, 175, 49);
 }
 
+.services{
+    width: 100%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.services h1{
+    font-weight: 500;
+    font-size: 25px;
+}
 .card-container {
     width: 70%;
     height: 100%;
     display: grid;
     grid-template-columns: 20% 20% 20%;
     grid-template-rows: 300px 300px 300px;
+    justify-content: space-around;
     column-gap: 2%;
     row-gap: 5%;
-    margin: 10% auto;
+    margin: 2% auto;
     justify-content: center;
     align-items: center;
     /*border: 1px solid black;*/
 }
-
+/*
 .carditems {
     border: 3px solid #000;
     border-radius: 10px;
@@ -38,52 +49,114 @@
     text-align: center;
     cursor: pointer;
 }
-
-.carditems:hover {
+*/
+.card-false:hover {
     transform: scale(1.1);
     transition: 60ms;
-    background-color: aqua;
+    background-color: rgb(236, 241, 241);
 }
 
-.carditems button {
-    width: fit-content;
-    align-self: center;
-    margin: 10px;
-    font-size: 10px;
-    padding: 2px 10px;
-    border-radius: 20px;
-   
-}
 
-.carditems button:hover {
-    background-color: #000  ;
-}
 
 .card-false {
-    width: 3rem;
-    height: 3rem;
-    background-color: white;
-    padding: 10px;
-    opacity: 0.5;
+    border: 1px solid rgba(195, 181, 181, 0.449);
+    border-radius: 10px;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
 }
 
 .card-true {
-    width: 3rem;
-    height: 3rem;
-    background-color: green;
-    padding: 10px;
-    opacity: 0.5;
+
+    border: 3px solid #000;
+    border-radius: 10px;
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    background-color:  rgb(236, 241, 241);
+   
 }
 
-.carditems p {
+.card-false p, .card-true p {
     width: 60%;
+    height: 20%;
     margin: 5px auto;
-    font-size: 12px;
+    font-size: 1rem;
     font-weight: 200;
 }
 
-.carditems h1 {
-    font-size: 2rem;
+.card-false button, .card-true button {
+    width: fit-content;
+    align-self: center;
+    position: relative;
+    margin-bottom: 2px;
+    font-size: 10px;
+    padding: 2px 10px;
+    border-radius: 2px;
+    border: 1px solid rgba(131, 115, 115, 0.449) ;
+    background-color: rgba(255, 123, 35, 0.971);
+   
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+.card-false h1, .card-true h1 {
+    width: 80%;
+    height: 20%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.5rem;
     font-weight: 500;
     margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.card-false img , .card-true img{
+    height: 30%;
+    margin-top: 10px ;
+}
+.UserInfo{
+    width: 40%;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.UserInfo h1{
+    font-weight: 500;
+    font-size: 25px;
+}
+.userdetails{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.userdetails label{
+    font-weight: 400;
+}
+.userdetails input{
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid rgb(73, 69, 69);
+}
+
+.errormsg{
+    color: red;
+    text-align: center;
+    font-size: 20px;
 }

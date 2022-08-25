@@ -17,52 +17,30 @@ function Navbar() {
   };
   return (
     <nav className="nav">
-
-      <a href="#" className="nav__brand">
+      <a href="/" className="nav__brand">
         CodeAspirators
       </a>
-      <a href="/" className="nav__brand">
-        herdoy
-
-      </a>
       <ul className={active}>
-        <li className="nav__item">
-          <a href="/" className="nav__link">
-            Home
-          </a>
-        </li>
+       
         <li className="nav__item">
           <a href="/services" className="nav__link">
             Services
           </a>
         </li>
+
         <li className="nav__item">
           <a href="/payment" className="nav__link">
             Transaction History
           </a>
         </li>
-        <li className="nav__item">
 
-          <a href="/Profile" className="nav__link">
-            Profile
-          </a>
-        </li>
+
         <li className="nav__item">
-          <a href="/about" className="nav__link">
-            About Us
+          <a href="/" className="nav__link">
+            Logout
           </a>
         </li>
-        
-        <li className="nav__item">
-          <a href="/checkout" className="nav__link">
-            Sign Up
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="/login_checkout" className="nav__link">
-            LogIn
-          </a>
-        </li>
+
       </ul>
       <div onClick={navToggle} className={icon}>
         <div className="line1"></div>

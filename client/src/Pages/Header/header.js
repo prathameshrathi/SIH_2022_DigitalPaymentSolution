@@ -1,67 +1,120 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
+import "../../components/NavBar/navbar.css"
 // Components
-import FullButton from "../../components/FullButton";
+
+//import HeaderImage from "../../Images/header-img.png"
+import FullButton from "../../components/FullButton"
 // Assets
-import HeaderImage from "../../Images/header-img.png"
+import HeaderImage from "../../Images/aadharheader.webp"
 import QuotesIcon from "../../assets/svg/Quotes";
 import Dots from "../../assets/svg/Dots";
 import NavBar from "../../components/NavBar/navbar";
+import Footer from '../../components/Footer/footer';
+import { Transform } from "@material-ui/icons";
 
 export default function Header() {
-  return (
+  const [active, setActive] = useState("nav__menu");
+  const [icon, setIcon] = useState("nav__toggler");
+  const navToggle = () => {
+    if (active === "nav__menu") {
+      setActive("nav__menu nav__active");
+    } else setActive("nav__menu");
+    // Icon Toggler
+    if (icon === "nav__toggler") {
+      setIcon("nav__toggler toggle");
+    } else setIcon("nav__toggler");
+  };
+
+    const mystyle = {
+        display:"flex",
+        justifyContent:"space-between",
+        width: "90%",
+        margin : "auto",
+        fontSize:"1.5rem",
+    }
+    const mybtn = {
+        fontWeight : "500", 
+        
+    }
+    
+    return (
       <>
-      <NavBar/>
-    <Wrapper id="home" className="container flexSpaceCenter">
-      <LeftSide className="flexCenter">
-        <div>
-          <h1 className="extraBold font60">We are Digital Agency.</h1>
-          <HeaderP className="font13 semiBold">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-            voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-          </HeaderP>
-          <BtnWrapper>
-            <FullButton title="Get Started" />
-          </BtnWrapper>
-        </div>
-      </LeftSide>
-      <RightSide>
-        <ImageWrapper>
-          <Img className="radius8" src={HeaderImage} alt="office" style={{zIndex: 9}} />
-          <QuoteWrapper className="flexCenter darkBg radius8">
-            <QuotesWrapper>
-              <QuotesIcon />
-            </QuotesWrapper>
+        <nav className="nav" style={mystyle}>
+          <div>
+            <a style={{color:"Orange" , fontSize:"2rem"}} href="#" className="nav__brand">
+              CodeAspirators
+            </a>
+          </div>
+          
+          
+          <div classname='nav'>
+            <ul className={active}>
+       
+              <li className="nav__item">
+                <a href="/signup" className="nav__link">
+                  Sign Up
+                </a>
+              </li>
+
+              <li className="nav__item">
+                <a href="/login" className="nav__link">
+                  Login
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    
+        <Wrapper id="home" className="container flexSpaceCenter">
+        <LeftSide className="flexCenter">
             <div>
-              <p className="font15 whiteColor">
-                <em>Friends, such as we desire, are dreams and fables. Friendship demands the ability to do without it.</em>
-              </p>
-              <p className="font13 orangeColor textRight" style={{marginTop: '10px'}}>Ralph Waldo Emerson</p>
+                <h1 className="title" style={{fontSize:"40px" , color:"#000"}}>We are Digital Agency.</h1>
+                
+                <HeaderP className="font13 semiBold" style={{color:"#3d3d29"}}>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                </HeaderP>
+                
+                
+                <button style={{padding:"8px 15px" , backgroundColor: "rgba(255, 123, 35, 0.971)"}} onClick = "/login">Get Started</button> 
+                
             </div>
-          </QuoteWrapper>
-          <DotsWrapper>
-            <Dots />
+        </LeftSide>
+        
+        <RightSide>
+            <ImageWrapper>
+                <Img className="radius8" src={HeaderImage} alt="office" style={{zIndex: "-1",width:"80%"}} />
+                
+            <DotsWrapper>
+        
           </DotsWrapper>
         </ImageWrapper>
         <GreyDiv className="lightBg"></GreyDiv>
       </RightSide>
     </Wrapper>
+    <Footer/>
     </>
   );
 }
 
 
 const Wrapper = styled.section`
-  padding-top: 80px;
+  padding-top:70px;
   width: 100%;
-  min-height: 840px;
+  padding-left:10%;
+  
+  //min-height: 840px;
   @media (max-width: 960px) {
     flex-direction: column;
   }
 `;
 const LeftSide = styled.div`
-  width: 50%;
+  width: 45%;
   height: 100%;
+  margin-left:5%;
+  font-size : 15px;
+  color: #ff0;
   @media (max-width: 960px) {
     width: 100%;
     order: 2;
@@ -73,8 +126,9 @@ const LeftSide = styled.div`
   }
 `;
 const RightSide = styled.div`
-  width: 50%;
+  width: 45%;
   height: 100%;
+  margin-right:5%;
   @media (max-width: 960px) {
     width: 100%;
     order: 1;
@@ -93,6 +147,8 @@ const HeaderP = styled.div`
 `;
 const BtnWrapper = styled.div`
   max-width: 190px;
+  background-color: rgba(255, 123, 35, 0.971);
+
   @media (max-width: 960px) {
     margin: 0 auto;
   }
@@ -112,13 +168,14 @@ const ImageWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   position: relative;
-  z-index: 9;
+  z-index: -1;
   @media (max-width: 960px) {
     width: 100%;
     justify-content: center;
   }
 `;
 const Img = styled.img`
+
   @media (max-width: 560px) {
     width: 80%;
     height: auto;
@@ -155,5 +212,3 @@ const DotsWrapper = styled.div`
     display: none;
   }
 `;
-
-

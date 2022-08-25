@@ -1,13 +1,10 @@
 //import ReactDOM from 'react-dom';
 //import Login from './Login';
 // import Navbar from './components/navbar';
-//import Navbar from './components/navbar';
-
 import NavBar from '../src/components/NavBar/navbar'
 import { BrowserRouter as Router, Route, Switch,Link } from 'react-router-dom';
 //import { AccordionButton } from 'react-bootstrap';
 import About from './Pages/About/About';
-//import Home from './Pages/Home/Home';
 import Header from './Pages/Header/header';
 import Profile from './Pages/Profile/Profile';
 import Services from './Pages/Services/services';
@@ -19,6 +16,7 @@ import React, { Component } from 'react'
 import Button from './Button';
 //import Login from './Pages/Register/Login'
 import LoginCheckout from './Pages/Checkout/login_checkout';
+import Otp from './components/otp/otp';
 // import HeaderOne from './demo';
 
 
@@ -32,10 +30,19 @@ export default class App extends Component {
         <Router>
         <Switch>
           <Route exact path="/">
-        
+          {/* <Helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Khula:wght@400;600;800&display=swap" rel="stylesheet" />
+      </Helmet> */}
             <Header />
           </Route>
-         
+          {/* <Route exact path="/demo">
+            <HeaderOne />
+          </Route> */}
+          <Route exact path="/">
+            <Header />
+          </Route>
           <Route exact path="/register">
             
             <LoginCheckout />
@@ -46,7 +53,7 @@ export default class App extends Component {
           </Route>
          
           
-          <Route exact path="/checkout">
+          <Route exact path="/signup">
             
             <Checkout />
           </Route>
@@ -61,7 +68,6 @@ export default class App extends Component {
             <Profile />
           </Route>
 
-
           <Route exact path="/services">
           
             <Services />
@@ -71,9 +77,9 @@ export default class App extends Component {
             < Payment/>
           </Route>
 
-          <Route exact path="/About">
-          
-            <About />
+
+          <Route exact path="/verify">
+            <Otp />
           </Route>
 
         </Switch>
