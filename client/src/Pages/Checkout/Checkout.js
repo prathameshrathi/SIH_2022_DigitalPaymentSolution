@@ -97,7 +97,7 @@ export default function Checkout() {
     // console.log("values in register handler",role);
     var self = this;
     //To be done:check for empty values before hitting submit
-    if (name.length > 0 && lname.length > 0 && mobile.length === 10 && email.length > 0 && aadhar.length === 12) {
+    if (name.length > 0) {
       var payload = {
         fname:name,lname:lname,address:address,email:email,mobile:mobile,upiId:upi,uid:aadhar,city:city,pincode:pincode,password:pwd
         // "lname":this.state.last_name,
@@ -178,16 +178,6 @@ export default function Checkout() {
           </Stepper>
           <React.Fragment>
             {activeStep === steps.length ? (
-<<<<<<< HEAD
-              <React.Fragment>
-                {/* <Typography variant="h5" gutterBottom> */}
-                  <Button onClick={handleClick}>Submit</Button>
-                  <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
-                      Back
-                    </Button>
-                {/* </Typography> */}
-              </React.Fragment>
-=======
               <Box sx={{ display: "flex" }}>
                   <Button sx={{ mt: 3, ml: 1 }} 
                     onClick={
@@ -198,7 +188,6 @@ export default function Checkout() {
                   </Button>
                  
               </Box>
->>>>>>> c7a8ff421c402210180249e49107ce9905e48c71
             ) : (
               <React.Fragment>
                 {getStepContent(activeStep)}

@@ -32,19 +32,10 @@ export default class App extends Component {
         <Router>
         <Switch>
           <Route exact path="/">
-          {/* <Helmet>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Khula:wght@400;600;800&display=swap" rel="stylesheet" />
-      </Helmet> */}
+        
             <Header />
           </Route>
-          {/* <Route exact path="/demo">
-            <HeaderOne />
-          </Route> */}
-          <Route exact path="/">
-            <Home />
-          </Route>
+         
           <Route exact path="/register">
             
             <LoginCheckout />
@@ -60,32 +51,16 @@ export default class App extends Component {
             <Checkout />
           </Route>
 
-<<<<<<< HEAD
-{/* <<<<<<< HEAD */}
-          {/* <Route exact path="/Register">
-            <Register />
-            </Route>   */}
-{/* ======= */}
           <Route exact path="/login">
             
             <LoginCheckout />
-{/* >>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7 */}
-=======
-          <Route exact path="/login">
-            
-            <LoginCheckout />
->>>>>>> c7a8ff421c402210180249e49107ce9905e48c71
           </Route>
           
           <Route exact path="/Profile">
           <NavBar/>
             <Profile />
           </Route>
-<<<<<<< HEAD
-{/* <<<<<<< HEAD */}
-{/* ======= */}
-=======
->>>>>>> c7a8ff421c402210180249e49107ce9905e48c71
+
 
           <Route exact path="/services">
           
@@ -96,20 +71,6 @@ export default class App extends Component {
             < Payment/>
           </Route>
 
-
-<<<<<<< HEAD
-
-          
-            
-
-
-          
-           
-            
-          
-{/* >>>>>>> 6ec985be77d3ad20d7cbf5896c9fc635058507b7 */}
-=======
->>>>>>> c7a8ff421c402210180249e49107ce9905e48c71
           <Route exact path="/About">
           
             <About />
