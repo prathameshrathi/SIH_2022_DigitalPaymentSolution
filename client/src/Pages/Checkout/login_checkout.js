@@ -16,6 +16,7 @@ import PersonalInfo from "./PersonalInfo";
 import CentreInfo from "./CentreInfo";
 import Review from "./AccountInfo";
 import NavBar from "../../components/NavBar/navbar";
+import Navbar from "../../components/Nav/navbar";
 import LoginPage from "./Login";
 import axios from "axios";
 import {useHistory} from 'react-router-dom';
@@ -123,7 +124,7 @@ export default function LoginCheckout() {
           </Typography>
         </Toolbar>
       </AppBar> */}
-      <NavBar />
+      <Navbar />
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper
           variant="outlined"

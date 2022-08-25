@@ -1,8 +1,39 @@
 import React, { useState } from "react";
 import "./navbar.css";
+import axios from 'axios';
+import { Button } from "@material-ui/core";
+import {useHistory} from 'react-router-dom';
 
 
 function Navbar() {
+  const history=useHistory();
+
+  
+function logOut(){
+  const data = {};
+  axios
+        .post("http://localhost:5000" + "/logout", data)
+        .then(function (response) {
+          // console.log(response);
+          if (response.status === 200) {
+            //  console.log("registration successfull");
+
+            // var loginmessage = "Not Registered yet.Go to registration";
+            // self.props.parentContext.setState({
+            //   loginmessage: loginmessage,
+            //   buttonLabel: "Register",
+            //   isLogin: true,
+            // });
+          } else {
+            // console.log("some error ocurred",+ response.status);
+          }
+        })
+        .catch(function (error) {
+          // console.log(error);
+        });
+        history.push("/");
+}
+
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
   const navToggle = () => {
@@ -35,10 +66,15 @@ function Navbar() {
         </li>
 
 
+
         <li className="nav__item">
-          <a href="/" className="nav__link">
+          {/* <a href="/" className="nav__link" onClick={logOut}>
+          
             Logout
-          </a>
+          </a> */}
+
+          <Button onClick={logOut}>Logout</Button>
+
         </li>
 
       </ul>

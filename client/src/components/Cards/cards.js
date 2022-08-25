@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./cards.css";
 import "../../components/otp/otp";
 import { useHistory } from "react-router-dom";
-
+import axios from "axios";
 const Cards = () => {
   const cardItems = [
     "Aadhar Enrollment",
@@ -14,13 +14,13 @@ const Cards = () => {
 
 
   const userservices = {
-    username : "",
-    aadharno : "",
-    mobileno : "",
-    bankno : "",
-    services : [0,0,0,0,0],
-    finalservices :[],
-    cost : 0,
+    user_name : "",
+    user_uid : "",
+    user_mob : "",
+    user_bank : "",
+    ini_services : [0,0,0,0,0],
+    services :[],
+    amount : 0,
 };
 
   const [items, setItems] = useState({
@@ -35,7 +35,7 @@ const Cards = () => {
       const item = e.currentTarget.getAttribute("data-item");
       e.currentTarget.className = "card-true";
       //console.log(idx);
-      userservices.services[idx] = 1;
+      userservices.ini_services[idx] = 1;
 
       //setItems({ ...items, [idx]: { item: item, selected: true } });
     } else {
@@ -44,84 +44,95 @@ const Cards = () => {
       e.currentTarget.className = "card-false";
 
       //console.log(idx);
-      userservices.services[idx] = 0;
+      userservices.ini_services[idx] = 0;
       //setItems({ ...items, [idx]: { item: item, selected: false } });
     }
     /*
     console.log("Array")
-    console.log(userservices.services[0]);
-    console.log(userservices.services[1]);
-    console.log(userservices.services[2]);
-    console.log(userservices.services[3]);
-    console.log(userservices.services[4]);
+    console.log(userservices.ini_services[0]);
+    console.log(userservices.ini_services[1]);
+    console.log(userservices.ini_services[2]);
+    console.log(userservices.ini_services[3]);
+    console.log(userservices.ini_services[4]);
     */
   }
 
   const history = useHistory();
   function handlecost(){
 
-    console.log("Inside function cost");
-    const myname = document.querySelector('#userName');
-    const myphone = document.querySelector('#phoneno');
-    const myaadharno= document.querySelector('#aadharno');
-    const mybankname = document.querySelector('#userName');
+    console.log("Inside function amount");
+    const myname = document.querySelector('#userName').value;
+    const myphone = document.querySelector('#phoneno').value;
+    const myuid= document.querySelector('#user_uid').value;
+    const mybankname = document.querySelector('#userName').value;
     const errmsg = document.querySelector('.errormsg');
 
     if(myname == ""){
       errmsg.innerHTML = "Enter Name";
     }else{
-      userservices.username = myname;
+      userservices.user_name = myname;
     }
-
+    console.log(userservices.user_name);
     if(myphone == ""){
       errmsg.innerHTML = "Enter Phone Number";
     }else if(myphone.length != 10){
       errmsg.innerHTML = "Phone number must be 10 digits";
     }
     else{
-      userservices.mobileno = myphone;
+      userservices.user_mob = myphone;
     }
 
-    if(myaadharno === ""){
+    if(myuid === ""){
       errmsg.innerHTML = "Enter Aadhar Number";
-    }else if(myaadharno.length != 12){
+    }else if(myuid.length != 12){
       errmsg.innerHTML = "Enter valid aadhar number";
     }
     else{
-      userservices.aadharno = myaadharno;
+      userservices.user_uid = myuid;
     }
 
-    if(userservices.services[0] == 1){
-      userservices.cost += 0;
-      userservices.finalservices.push(0);
+    if(userservices.ini_services[0] == 1){
+      userservices.amount += 0;
+      userservices.services.push(0);
     }
-    if(userservices.services[1] == 1){
-      userservices.cost += 0;
-      userservices.finalservices.push(1);
+    if(userservices.ini_services[1] == 1){
+      userservices.amount += 0;
+      userservices.services.push(1);
     }
-    if(userservices.services[2] == 1){
-      userservices.cost += 100;
-      userservices.finalservices.push(2);
+    if(userservices.ini_services[2] == 1){
+      userservices.amount += 100;
+      userservices.services.push(2);
     }
-    if(userservices.services[3] == 1){
-      userservices.cost += 50;
-      userservices.finalservices.push(3);
+    if(userservices.ini_services[3] == 1){
+      userservices.amount += 50;
+      userservices.services.push(3);
     }
-    if(userservices.services[4] == 1){
-      userservices.cost += 30;
-      userservices.finalservices.push(4);
+    if(userservices.ini_services[4] == 1){
+      userservices.amount += 30;
+      userservices.services.push(4);
     }
     /*
-    console.log(userservices.finalservices[0]);
-    console.log(userservices.finalservices[1]);
-    console.log(userservices.finalservices[2]);
-    console.log(userservices.finalservices[3]);
-    console.log(userservices.finalservices[4]);
-    console.log(userservices.cost);
+    console.log(userservices.services[0]);
+    console.log(userservices.services[1]);
+    console.log(userservices.services[2]);
+    console.log(userservices.services[3]);
+    console.log(userservices.services[4]);
+    console.log(userservices.amount);
     */
    console.log("Just before");
-    history.push("/verify");
-    
+   axios.post("http://localhost:5000" + "/userdata", userservices)
+        .then(function (response) {
+          if(response.status==200){
+            history.push('/verify');
+          }
+          else{
+            alert("Details invalid");
+          }
+          // console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });  
   }
 
   function handleSubmit() {
@@ -157,7 +168,7 @@ const Cards = () => {
           <input 
             className='textfield'
             required
-            id = "aadharno"
+            id = "user_uid"
             placeholder= "Aadhar Number"
             //onChange = {(event,newValue) => this.setState({first_name:newValue})}
           />
@@ -175,7 +186,7 @@ const Cards = () => {
 
       </div>
 
-      <div className="services"><h1>Services</h1></div>
+      <div className="ini_services"><h1>Services</h1></div>
       <div className="card-container">
         
             <div
@@ -255,4 +266,3 @@ function Card(props) {
   return <div className={classnamex}>{props.props.item}</div>;
 }
 export default Cards;
-

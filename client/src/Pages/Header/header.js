@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import styled from "styled-components";
-import "../../components/NavBar/navbar.css"
+//import "../../components/NavBar/navbar.css"
 // Components
 
 //import HeaderImage from "../../Images/header-img.png"
@@ -9,23 +9,14 @@ import FullButton from "../../components/FullButton"
 import HeaderImage from "../../Images/aadharheader.webp"
 import QuotesIcon from "../../assets/svg/Quotes";
 import Dots from "../../assets/svg/Dots";
-import NavBar from "../../components/NavBar/navbar";
+// import NavBar from "../../components/NavBar/navbar";
 import Footer from '../../components/Footer/footer';
 import { Transform } from "@material-ui/icons";
+import Navbar from "../../components/Nav/navbar";
+import {useHistory} from 'react-router-dom';
 
 export default function Header() {
-  const [active, setActive] = useState("nav__menu");
-  const [icon, setIcon] = useState("nav__toggler");
-  const navToggle = () => {
-    if (active === "nav__menu") {
-      setActive("nav__menu nav__active");
-    } else setActive("nav__menu");
-    // Icon Toggler
-    if (icon === "nav__toggler") {
-      setIcon("nav__toggler toggle");
-    } else setIcon("nav__toggler");
-  };
-
+  const history=useHistory();
     const mystyle = {
         display:"flex",
         justifyContent:"space-between",
@@ -34,37 +25,24 @@ export default function Header() {
         fontSize:"1.5rem",
     }
     const mybtn = {
-        fontWeight : "500", 
-        
+        fontWeight : "500",     
     }
-    
+    const func=()=>{
+      history.push("/login");
+    }
     return (
       <>
-        <nav className="nav" style={mystyle}>
-          <div>
+      <Navbar/>
+        {/* <div style={{display:"flex" , justifyContent : "space-between"}}>
             <a style={{color:"Orange" , fontSize:"2rem"}} href="#" className="nav__brand">
               CodeAspirators
             </a>
-          </div>
           
           
-          <div classname='nav'>
-            <ul className={active}>
-       
-              <li className="nav__item">
-                <a href="/signup" className="nav__link">
-                  Sign Up
-                </a>
-              </li>
-
-              <li className="nav__item">
-                <a href="/login" className="nav__link">
-                  Login
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+          <a href="/signup">Hi</a>
+          
+        </div> */}
+        
     
         <Wrapper id="home" className="container flexSpaceCenter">
         <LeftSide className="flexCenter">
@@ -77,7 +55,7 @@ export default function Header() {
                 </HeaderP>
                 
                 
-                <button style={{padding:"8px 15px" , backgroundColor: "rgba(255, 123, 35, 0.971)"}} onClick = "/login">Get Started</button> 
+                <button style={{padding:"8px 15px" , backgroundColor: "rgba(255, 123, 35, 0.971)"}} onClick = {func}>Get Started</button> 
                 
             </div>
         </LeftSide>

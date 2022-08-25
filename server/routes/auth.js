@@ -57,8 +57,10 @@ router.get('/profile',authenticate,async (req,res)=>{
 });
 
 
-router.get('/logout',authenticate,async (req,res)=>{
+router.post('/logout',authenticate,async (req,res)=>{
+    const data = req.body;
     try{
+        console.log("Logout called");
     res.clearCookie('OperatorCookie', {path:'/'});
     res.status(200).json({message:"User Logout"});
     }

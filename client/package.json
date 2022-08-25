@@ -2,7 +2,7 @@
   "name": "medchain",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:5000",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/react": "^11.7.0",

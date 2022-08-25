@@ -1,4 +1,4 @@
-import Navbar from '../../components/navbar';
+import Navbar from '../../components/Nav/navbar';
 
 import '../../App'
 // import Features from '../../Features';

@@ -12,13 +12,13 @@
     background-color: rgb(49, 175, 49);
 }
 
-.services{
+.ini_services{
     width: 100%;
     margin-top: 5%;
     text-align: center;
 }
 
-.services h1{
+.ini_services h1{
     font-weight: 500;
     font-size: 25px;
 }

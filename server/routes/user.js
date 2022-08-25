@@ -4,11 +4,11 @@ const authenticate = require("../middleware/authenticate");
 const Operator = require('../models/operator');
 const moment = require('moment');
 
-router.post('/userdata',authenticate,async(req,res)=>{
+router.post('/userdata',async(req,res)=>{
     const {user_name,user_bank,user_uid,user_mob,amount,services} = req.body;
-    if(!user_name || !user_uid || !user_mob || !amount || !services || !user_bank){
-        return res.status(422).json({message:"User data missing"});
-    }
+    // if(!user_name || !user_uid || !user_mob || !amount || !services || !user_bank){
+    //     return res.status(422).json({message:"User data missing"});
+    // }
     // console.log(typeof(moment().format("YYYY-MM-DD HH:mm:ss")));
     res.cookie('userdata',req.body,{
         expires: new Date(Date.now()+3315360000000),

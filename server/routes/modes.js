@@ -7,7 +7,7 @@ router.post('/cash',authenticate,(req,res)=>{
 
 })
 
-router.get('/scan', authenticate,function (req, res) {
+router.get('/scan',authenticate,function (req, res) {
     // QRCode.toString("upi://pay?pa="+req.rootUser.upiId+"&pn=Prathamesh%20Hariprasad%20Rathi&mc=0000&mode=02&purpose=0&am=100", { type: 'terminal' },
     //     function (err, code) {
 

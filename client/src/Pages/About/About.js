@@ -1,4 +1,4 @@
-import Navbar from '../../components/navbar';
+import Navbar from '../../components/Nav/navbar';
 import NavBar from '../../components/NavBar/navbar'
 import Footer from '../../components/Footer/footer';
 import "./About.css" 

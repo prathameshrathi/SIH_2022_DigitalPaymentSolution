@@ -15,7 +15,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import PersonalInfo from "./PersonalInfo";
 import CentreInfo from "./CentreInfo";
 import axios from "axios";
-import NavBar from "../../components/NavBar/navbar";
+import Navbar from "../../components/Nav/navbar";
 import AccountInfo from "./AccountInfo";
 import {useHistory} from 'react-router-dom';
 // import browserHistory from 'react-router';
@@ -160,7 +160,7 @@ export default function Checkout() {
           </Typography>
         </Toolbar>
       </AppBar> */}
-      <NavBar />
+      <Navbar />
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper
           variant="outlined"
