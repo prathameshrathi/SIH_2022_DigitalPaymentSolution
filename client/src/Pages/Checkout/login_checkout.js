@@ -17,6 +17,8 @@ import CentreInfo from "./CentreInfo";
 import Review from "./AccountInfo";
 import NavBar from "../../components/NavBar/navbar";
 import LoginPage from "./Login";
+import axios from "axios";
+import {useHistory} from 'react-router-dom';
 
 function Copyright() {
   return (
@@ -60,6 +62,49 @@ export default function LoginCheckout() {
     setActiveStep(activeStep - 1);
   };
 
+  const history=useHistory();
+
+  const handleClick = (event, role) => {
+    var apiBaseUrl = "http://localhost:5000";
+    // console.log("values in register handler",role);
+    var self = this;
+    //To be done:check for empty values before hitting submit
+    
+      var payload = {
+        email:email,password:pwd
+      };
+
+      // const api=axios.create({
+      //   method:'post',
+      //   url:apiBaseUrl + "/login",
+      //   data:payload,
+      //   withCredentials:true
+      // })
+
+      axios
+        .post(apiBaseUrl + "/login", payload,{withCredentials:true})
+        .then(function (response) {
+          console.log(response);
+          if (response.status === 200) {
+            //  console.log("registration successfull");
+
+            var loginmessage = "Not Registered yet.Go to registration";
+            self.props.parentContext.setState({
+              loginmessage: loginmessage,
+              buttonLabel: "Register",
+              isLogin: true,
+            });
+          } else {
+            console.log("some error ocurred", response.status);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+        history.push('/services');
+    }
+  
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -91,10 +136,12 @@ export default function LoginCheckout() {
           <React.Fragment>
             {activeStep === steps.length ? (
               <React.Fragment>
-                <Typography variant="h5" gutterBottom>
+                {/* <Typography variant="h5" gutterBottom>
                   Thank you for submitting the form.
-                </Typography>
-                
+                </Typography> */}
+                <Box sx={{ display: "flex" }}>
+                  <Button sx={{ mt: 3, ml: 1 }} onClick={handleClick}>Login</Button>
+                </Box>
                 
               </React.Fragment>
             ) : (
@@ -112,7 +159,7 @@ export default function LoginCheckout() {
                     onClick={handleNext}
                     sx={{ mt: 3, ml: 1 }}
                   >
-                    {activeStep === steps.length - 1 ? "Submit" : "Next"}
+                    {activeStep === steps.length - 1 ? "Next" : "Next"}
                   </Button>
                 </Box>
               </React.Fragment>

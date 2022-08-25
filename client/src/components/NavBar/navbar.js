@@ -17,8 +17,13 @@ function Navbar() {
   };
   return (
     <nav className="nav">
+<<<<<<< HEAD
       <a href="#" className="nav__brand">
         CodeAspirators
+=======
+      <a href="/" className="nav__brand">
+        herdoy
+>>>>>>> c7a8ff421c402210180249e49107ce9905e48c71
       </a>
       <ul className={active}>
         <li className="nav__item">
@@ -37,7 +42,11 @@ function Navbar() {
           </a>
         </li>
         <li className="nav__item">
+<<<<<<< HEAD
           <a href="/Profile" className="nav__link">
+=======
+          <a href="/profile" className="nav__link">
+>>>>>>> c7a8ff421c402210180249e49107ce9905e48c71
             Profile
           </a>
         </li>
@@ -50,6 +59,11 @@ function Navbar() {
         <li className="nav__item">
           <a href="/checkout" className="nav__link">
             Sign Up
+          </a>
+        </li>
+        <li className="nav__item">
+          <a href="/login_checkout" className="nav__link">
+            LogIn
           </a>
         </li>
       </ul>
